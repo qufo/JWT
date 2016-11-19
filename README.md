@@ -26,7 +26,7 @@ $app->register(Qufo\JWT\Provider\LumenServiceProvider::class);
 to your bootstrap/app.php.
 
 # How to use
-0. Build a Token first. at any place of your code, like
+0.Build a Token first. at any place of your code, like
 ```
     $jwt_token = \Qufo\JWT\JWT::encode($payload);
 ```
