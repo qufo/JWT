@@ -3,7 +3,7 @@
     "description": "Simple Json Web Token toolkit",
     "type": "library",
     "require": {
-        "php": ">=5.6.4",
+        "php": ">=5.6.4 || ^7.0",
         "illuminate/support":"~5.0"
     },
     "license": "MIT",
@@ -13,5 +13,10 @@
             "email": "qufo@163.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload":{
+        "psr-4":{
+            "Qufo\\JWT\\":"src/"
+        }
+    }
 }
