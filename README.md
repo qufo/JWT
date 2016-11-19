@@ -26,13 +26,13 @@ $app->register(Qufo\JWT\Provider\LumenServiceProvider::class);
 to your bootstrap/app.php.
 
 # How to use
-0.Build a Token first. at any place of your code, like
+1. Build a Token first. at any place of your code, like
 ```
     $jwt_token = \Qufo\JWT\JWT::encode($payload);
 ```
 and bring it up to your client, so the client can take and remember it .
 
-1. Build a Middleware at app/Http/Middleware names JWTAuth.php
+2. Build a Middleware at app/Http/Middleware names JWTAuth.php
 ```
 <?php
 /**
@@ -92,7 +92,7 @@ class JWTAuth
 }
 ```
 
-2. add
+3. add
 ```
 $app->routeMiddleware([
     'jwt.auth'  => 'App\Http\Middleware\JWTAuth',
@@ -101,9 +101,9 @@ $app->routeMiddleware([
 
 to your bootstrap/app.php.
 
-3.Modify you routes.php like
+4. Modify you routes.php like
 ```
-$api->group(['middleware'=>'jwt.auth'],function() use ($app){
+$app->group(['middleware'=>'jwt.auth'],function() use ($app){
    //Your Routes Protected by JWT Auth.
 });
 ```
