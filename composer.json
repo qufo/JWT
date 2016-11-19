@@ -12,5 +12,6 @@
             "name": "qufo",
             "email": "qufo@163.com"
         }
-    ]
+    ],
+    "minimum-stability": "dev"
 }
