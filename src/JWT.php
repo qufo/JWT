@@ -111,7 +111,7 @@ class JWT
      * @throws \Exception
      */
     public static function jsonDecode($input){
-        $obj = json_decode($input, true, 512, JSON_BIGINT_AS_STRING);
+        $obj = json_decode($input, true, 512 , JSON_BIGINT_AS_STRING);
         if (JSON_ERROR_NONE !== json_last_error()){
             throw new \Exception(json_last_error_msg());
         }
