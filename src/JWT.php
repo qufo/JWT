@@ -59,10 +59,10 @@ class JWT
         if (!self::verify("$header_s.$payload_s",$sign)){
             throw new \Exception('Signature fail.');
         }
-        if (isset($payload->nbf) && $payload->iat > time()) {
+        if (isset($payload['nbf']) && $payload['iat'] > time()) {
             throw new \Exception('Token create time error.');
         }
-        if (isset($payload->exp) && ($payload->exp < time())) {
+        if (isset($payload['exp']) && ($payload['exp'] < time())) {
             throw new \Exception('Token had expired.');
         }
 
@@ -111,7 +111,7 @@ class JWT
      * @throws \Exception
      */
     public static function jsonDecode($input){
-        $obj = json_decode($input, false, 512, JSON_BIGINT_AS_STRING);
+        $obj = json_decode($input, true, 512, JSON_BIGINT_AS_STRING);
         if (JSON_ERROR_NONE !== json_last_error()){
             throw new \Exception(json_last_error_msg());
         }
